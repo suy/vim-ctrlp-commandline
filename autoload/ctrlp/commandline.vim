@@ -3,16 +3,6 @@
 " Description:   Command line history extension for ctrlp.vim
 " =============================================================================
 
-" To load this extension into ctrlp, add this to your vimrc:
-"
-"     let g:ctrlp_extensions = ['commandline']
-"
-" If you have other extensions (for example, 'mixed'):
-"
-"     let g:ctrlp_extensions = [
-"         \ 'mixed',
-"         \ 'commandline',
-"         \ ]
 
 " Get the script's filename.
 let s:n = exists('s:n') ? s:n : fnamemodify(expand('<sfile>', 1), ':t:r')
