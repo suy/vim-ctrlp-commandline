@@ -64,8 +64,10 @@ function! ctrlp#{s:n}#init()
 	let num = histnr('cmd')
 	let line = histget('cmd', num)
 	let lines = []
-	while line != ''
-		call add(lines, line)
+	while num >= 1
+		if line != ''
+			call add(lines, line)
+		endif
 		let num = num-1
 		let line = histget('cmd', num)
 	endwhile
