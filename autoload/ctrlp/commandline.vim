@@ -83,8 +83,13 @@ endfunction
 "  a:str    the selected string
 "
 function! ctrlp#{s:n}#accept(mode, str)
-  call ctrlp#exit()
-  execute ':' . a:str
+	call ctrlp#exit()
+	" Mnemonic for silent: <C-s>, i.e., horizontal split.
+	if a:mode == 'h'
+		silent execute ':' . a:str
+	else
+		execute ':' . a:str
+	endif
 endfunction
 
 
