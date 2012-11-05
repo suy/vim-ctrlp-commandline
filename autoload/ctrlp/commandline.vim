@@ -90,6 +90,7 @@ function! ctrlp#{s:n}#accept(mode, str)
 	else
 		execute ':' . a:str
 	endif
+	call histadd('cmd', a:str)
 endfunction
 
 
