@@ -84,13 +84,18 @@ endfunction
 "
 function! ctrlp#{s:n}#accept(mode, str)
 	call ctrlp#exit()
+	" Start adding the entry to the history, so it can be edited if needed.
+	call histadd('cmd', a:str)
+
 	" Mnemonic for silent: <C-s>, i.e., horizontal split.
 	if a:mode == 'h'
 		silent execute ':' . a:str
+	" Mnemonic for ediT: <C-t>. Opens the command line and goes up.
+	elseif a:mode == 't'
+		call feedkeys(":\<C-p>", 'n')
 	else
 		execute ':' . a:str
 	endif
-	call histadd('cmd', a:str)
 endfunction
 
 
