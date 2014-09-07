@@ -29,3 +29,19 @@ let g:ctrlp_extensions = [
     \ ]
 ```
 
+Usage
+=====
+
+You can either run Ctrl-P and switch to command mode, or add the
+following to your .vimrc
+
+```VimL
+    command! CtrlPCommandLine call ctrlp#init(ctrlp#commandline#id())
+```
+
+and use `:CtrlPCommandLine`. Alternatively, the following mapping will
+replace `<C-f>` in command mode:
+
+```VimL
+    cnoremap <silent> <C-f> <C-c>:call ctrlp#init(ctrlp#commandline#id())<CR>
+```
